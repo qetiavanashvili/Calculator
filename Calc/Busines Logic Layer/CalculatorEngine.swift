@@ -69,6 +69,14 @@ struct CalculatorEngine {
     }
     
     mutating func percentagePressed() {
+        switch operandSide {
+        case .leftHandSide:
+            mathEquation.applyPercentageToLeftHandSide()
+            lcdDisplayText = mathEquation.lhs.formatted()
+        case .rightHandSide:
+            mathEquation.applyPercentageToRightHandSide()
+            lcdDisplayText = mathEquation.rhs?.formatted() ?? "Error"
+        }
         
     }
     
