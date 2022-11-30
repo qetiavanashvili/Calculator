@@ -20,6 +20,8 @@ struct MathEquation {
     var operation: OperationType?
     var result: Decimal?
     
+    // MARK: - Execution
+    
     mutating func execute() {
         guard
             let rhs = self.rhs,
@@ -38,5 +40,13 @@ struct MathEquation {
             
             
         }
+    }
+    
+// MARK: - Negate
+    mutating func negateLeftHandSide() {
+        lhs.negate()
+    }
+    mutating func negateRightHandSide() {
+        rhs?.negate()
     }
 }

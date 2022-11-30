@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD48CBA292423E300E9D4CD /* Calc */,
-				DAD48CD1292423E900E9D4CD /* CalcTests */,
+				DAD48CD1292423E900E9D4CD /* MathEquationTests */,
 				DAD48CB9292423E300E9D4CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,12 +111,12 @@
 			path = Calc;
 			sourceTree = "<group>";
 		};
-		DAD48CD1292423E900E9D4CD /* CalcTests */ = {
+		DAD48CD1292423E900E9D4CD /* MathEquationTests */ = {
 			isa = PBXGroup;
 			children = (
 				DAD48CD2292423E900E9D4CD /* MathEquationTests */,
 			);
-			path = CalcTests;
+			path = MathEquationTests;
 			sourceTree = "<group>";
 		};
 		DAE6A69029377B92004E4998 /* Presentation Layer */ = {
