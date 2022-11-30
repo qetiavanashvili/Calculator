@@ -67,5 +67,23 @@ struct MathEquation {
         
     }
     
+    // MARK: - String Representation
+    func generatePrintOut() -> String {
+      
+        let operationString = generateStringRepresentation()
+        return lhs.formatted() + " " + operationString + " " + (rhs?.formatted() ?? "")
+        + " = " + (result?.formatted() ?? "")
+        
+    }
     
+    private func generateStringRepresentation() -> String {
+        switch operation {
+        case .add: return "+"
+        case .subtract: return "-"
+        case .multiply: return "*"
+        case .divide: return "/"
+        case .none:
+            return ""
+        }
+    }
 }
