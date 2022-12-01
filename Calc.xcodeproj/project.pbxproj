@@ -18,6 +18,7 @@
 		DAD48CD3292423E900E9D4CD /* MathEquationTests in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CD2292423E900E9D4CD /* MathEquationTests */; };
 		DAE6A68E29377B6C004E4998 /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A68D29377B6C004E4998 /* CalculatorEngine.swift */; };
 		DAE6A69529377CAC004E4998 /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A69429377CAC004E4998 /* UIColor+HexValue.swift */; };
+		DAE6A69B29387351004E4998 /* MathInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A69A29387351004E4998 /* MathInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DAD48CD8292423E900E9D4CD /* CalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE6A68D29377B6C004E4998 /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		DAE6A69429377CAC004E4998 /* UIColor+HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
+		DAE6A69A29387351004E4998 /* MathInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE6A68D29377B6C004E4998 /* CalculatorEngine.swift */,
+				DAE6A69A29387351004E4998 /* MathInputController.swift */,
 			);
 			path = "Busines Logic Layer";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				DA7CA118292FFD410033DAEB /* MathEquation.swift in Sources */,
 				DAE6A69529377CAC004E4998 /* UIColor+HexValue.swift in Sources */,
+				DAE6A69B29387351004E4998 /* MathInputController.swift in Sources */,
 				DAD48CC0292423E300E9D4CD /* CalcViewController.swift in Sources */,
 				DA7CA114292966790033DAEB /* CalculatorTheme.swift in Sources */,
 				DAD48CBC292423E300E9D4CD /* AppDelegate.swift in Sources */,
