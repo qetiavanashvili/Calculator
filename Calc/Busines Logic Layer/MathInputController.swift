@@ -109,13 +109,14 @@ struct MathInputController {
         var newStringRepresentation = previousInput.isZero ?  "" : lcdDisplayText
         newStringRepresentation.append(stringInput)
         
+        newStringRepresentation = newStringRepresentation.replacingOccurrences(of: ",", with: "")
         let formatter = NumberFormatter()
         formatter.generatesDecimalNumbers = true
         formatter.numberStyle = .decimal
         guard let convertedNumber = formatter.number(from: newStringRepresentation) else  { return (.nan, "Error") }
         
         let newNumber = convertedNumber.decimalValue
-        let newLCDDisplayText = newStringRepresentation
+        let newLCDDisplayText = newNumber.formatted()
         return (newNumber, newLCDDisplayText)
     }
 }
