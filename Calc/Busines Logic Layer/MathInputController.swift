@@ -18,6 +18,7 @@ struct MathInputController {
     private var operandSide = OperandSide.leftHandSide
     
     // MARK: - Math Equation
+    
     private(set) var mathEquation = MathEquation(lhs: .zero)
     
     
@@ -111,10 +112,10 @@ struct MathInputController {
         let formatter = NumberFormatter()
         formatter.generatesDecimalNumbers = true
         formatter.numberStyle = .decimal
-        guard let convertedNumber = formatter.number(from: newStringRepresentation) else  { return (.nan, "Errror") }
+        guard let convertedNumber = formatter.number(from: newStringRepresentation) else  { return (.nan, "Error") }
         
         let newNumber = convertedNumber.decimalValue
-        let newLCDDisplay = newStringRepresentation
-        return(newNumber, newLCDDisplay)
+        let newLCDDisplayText = newStringRepresentation
+        return (newNumber, newLCDDisplayText)
     }
 }
