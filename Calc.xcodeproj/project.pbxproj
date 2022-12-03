@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA7CA114292966790033DAEB /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CA113292966790033DAEB /* CalculatorTheme.swift */; };
 		DA7CA118292FFD410033DAEB /* MathEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CA117292FFD410033DAEB /* MathEquation.swift */; };
+		DA7FEB8B293BF54900CAAD35 /* String + Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7FEB8A293BF54900CAAD35 /* String + Prefix.swift */; };
 		DAD48CBC292423E300E9D4CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBB292423E300E9D4CD /* AppDelegate.swift */; };
 		DAD48CBE292423E300E9D4CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */; };
 		DAD48CC0292423E300E9D4CD /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBF292423E300E9D4CD /* CalcViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		DA7CA113292966790033DAEB /* CalculatorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
 		DA7CA117292FFD410033DAEB /* MathEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquation.swift; sourceTree = "<group>"; };
+		DA7FEB8A293BF54900CAAD35 /* String + Prefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Prefix.swift"; sourceTree = "<group>"; };
 		DAD48CB8292423E300E9D4CD /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD48CBB292423E300E9D4CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA7FEB8C293BF78200CAAD35 /* Swift Extensions  */ = {
+			isa = PBXGroup;
+			children = (
+				DA7FEB8A293BF54900CAAD35 /* String + Prefix.swift */,
+			);
+			path = "Swift Extensions ";
+			sourceTree = "<group>";
+		};
 		DAD48CAF292423E300E9D4CD = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		DAD48CBA292423E300E9D4CD /* Calc */ = {
 			isa = PBXGroup;
 			children = (
+				DA7FEB8C293BF78200CAAD35 /* Swift Extensions  */,
 				DAE6A69029377B92004E4998 /* Presentation Layer */,
 				DAE6A698293782C2004E4998 /* Busines Logic Layer */,
 				DAE6A6992937834F004E4998 /* Data Layer */,
@@ -311,6 +322,7 @@
 				DAE6A69529377CAC004E4998 /* UIColor+HexValue.swift in Sources */,
 				DAE6A69B29387351004E4998 /* MathInputController.swift in Sources */,
 				DAD48CC0292423E300E9D4CD /* CalcViewController.swift in Sources */,
+				DA7FEB8B293BF54900CAAD35 /* String + Prefix.swift in Sources */,
 				DA7CA114292966790033DAEB /* CalculatorTheme.swift in Sources */,
 				DAD48CBC292423E300E9D4CD /* AppDelegate.swift in Sources */,
 				DAE6A68E29377B6C004E4998 /* CalculatorEngine.swift in Sources */,
