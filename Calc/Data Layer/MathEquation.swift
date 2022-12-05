@@ -22,6 +22,10 @@ struct MathEquation {
     
     // MARK: - Execution
     
+    var executed: Bool {
+        return result != nil
+    }
+    
     mutating func execute() {
         guard
             let rhs = self.rhs,
