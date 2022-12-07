@@ -45,6 +45,8 @@ extension CalcViewController {
             operationTitleColor:            "#FFFFFF",
                                
             pinpadColor:                    "#1D1D1D",
-            pinpadTitleColor:               "#767676")
+            pinpadTitleColor:               "#767676",
+            
+            statusBarStyle: .light)
     }
 }

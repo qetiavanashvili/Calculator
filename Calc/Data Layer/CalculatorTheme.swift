@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum StatusBarStyle {
+    case light
+    case dark
+}
+
 struct CalculatorTheme {
     
     let extraFunctionColor : String
@@ -20,4 +25,7 @@ struct CalculatorTheme {
     
     let pinpadColor : String
     let pinpadTitleColor: String
+    
+    
+    let statusBarStyle: StatusBarStyle
 }
