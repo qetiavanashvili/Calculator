@@ -41,15 +41,7 @@ class CalcViewController: UIViewController {
     // MARK: Color Themes
  
     private var currentTheme: CalculatorTheme {
-        return purpleTheme
-    }
-    
-    private var darkTheme: CalculatorTheme {
-        return CalculatorTheme(extraFunctionColor: "#a6a6a6", extraFunctionTitleColor: "#FFFFFF", backgroundColor: "#000000", displayColor: "#FFFFFF", operationColor: "#ff9f0a", operationTitleColor: "#FFFFFF", pinpadColor: "#333333", pinpadTitleColor: "#FFFFFF")
-    }
-    
-    private var purpleTheme: CalculatorTheme {
-        return CalculatorTheme(extraFunctionColor: "#a6a6a6", extraFunctionTitleColor: "#FFFFFF", backgroundColor: "#000000", displayColor: "#FFFFFF", operationColor: "#7550FE", operationTitleColor: "#FFFFFF", pinpadColor: "#333333", pinpadTitleColor: "#FFFFFF")
+        return darkTheme
     }
     
     
