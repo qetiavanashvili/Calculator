@@ -61,6 +61,7 @@ class CalcViewController: UIViewController {
     
     private func addThemeGestureRecogniser() {
         let themeGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.themeGestureRecogniserDidTap(_gesture:)))
+        themeGestureRecogniser.numberOfTapsRequired = 2
         lcdDisplay.addGestureRecognizer(themeGestureRecogniser)
     }
     
