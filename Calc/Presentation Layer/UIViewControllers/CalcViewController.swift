@@ -53,7 +53,7 @@ class CalcViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addThemeGestureRecogniser()
-        decorateView()
+        redecorateView()
         // Do any additional setup after loading the view.
     }
     
@@ -66,13 +66,21 @@ class CalcViewController: UIViewController {
     }
     
     @objc private func themeGestureRecogniserDidTap(_gesture: UITapGestureRecognizer) {
-        print("User did tap")
+        decorateViewWithNextTheme()
     }
     
     
     // MARK: Decorate
     
-    private func decorateView() {
+    private func decorateViewWithNextTheme() {
+        ThemeManager.shared.moveToNextTheme()
+        redecorateView()
+    }
+    
+    
+    
+    private func redecorateView() {
+        
         view.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         lcdDisplay.backgroundColor = .clear
         displayLabel.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
