@@ -31,14 +31,26 @@ class ThemeManager {
     
     init() {
         populatedArrayOfThemes()
+        restoreSavedThemeIndex()
             
         }
         
     private func populatedArrayOfThemes() {
             themes = [darkTheme,purpleTheme,electroTheme,orangeTheme,washedOutTheme,bloodOrangeTheme,darkBlueTheme,lightBlueTheme,lightTheme,pinkTheme]
         }
+    // MARK: - Save & Restore To Disk
 
-
+    private func restoreSavedThemeIndex() {
+        savedThemeIndex = 0
+        if let previousThemeIndex = UserDefaults.standard.object(forKey: "IOSBFree.com.Calc.ThemeManager.ThemeIndex") as? Int {
+            savedThemeIndex = previousThemeIndex
+        }
+        savedTheme = themes[savedThemeIndex]
+    }
+    
+    private func saveThemeIndexToDisk() {
+        UserDefaults.standard.set(savedThemeIndex, forKey: "IOSBFree.com.Calc.ThemeManager.ThemeIndex")
+    }
     // MARK: - Next Theme
 
     func moveToNextTheme() {
@@ -48,5 +60,6 @@ class ThemeManager {
         savedThemeIndex = 0
     }
         savedTheme = themes[savedThemeIndex]
+        saveThemeIndexToDisk()
     }
 }
