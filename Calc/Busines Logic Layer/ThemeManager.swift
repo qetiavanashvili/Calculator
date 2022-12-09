@@ -12,6 +12,9 @@ class ThemeManager {
     
     static let shared = ThemeManager ()
     
+    // MARK: - Data Storage
+    private var dataStore = DataStoreManager(key: "IOSBFree.com.Calc.ThemeManager.ThemeIndex")
+    
     // MARK: - Themes
     
     private var savedThemeIndex = 0
@@ -42,15 +45,18 @@ class ThemeManager {
 
     private func restoreSavedThemeIndex() {
         savedThemeIndex = 0
-        if let previousThemeIndex = UserDefaults.standard.object(forKey: "IOSBFree.com.Calc.ThemeManager.ThemeIndex") as? Int {
+        if let previousThemeIndex = dataStore.getValue() as? Int {
             savedThemeIndex = previousThemeIndex
         }
+       
         savedTheme = themes[savedThemeIndex]
     }
     
     private func saveThemeIndexToDisk() {
-        UserDefaults.standard.set(savedThemeIndex, forKey: "IOSBFree.com.Calc.ThemeManager.ThemeIndex")
+        dataStore.set(savedThemeIndex)
     }
+    
+    
     // MARK: - Next Theme
 
     func moveToNextTheme() {
