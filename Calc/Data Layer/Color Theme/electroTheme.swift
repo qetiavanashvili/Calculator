@@ -34,7 +34,7 @@ import Foundation
 extension ThemeManager {
     
     var electroTheme: CalculatorTheme {
-        return CalculatorTheme(
+        return CalculatorTheme(id: "3",
             extraFunctionColor:                "#0E0E41",
             extraFunctionTitleColor:                   "#FFFFFF",
             

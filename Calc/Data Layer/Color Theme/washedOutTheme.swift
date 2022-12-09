@@ -34,7 +34,7 @@ import Foundation
 extension ThemeManager {
     
     var washedOutTheme: CalculatorTheme {
-        return CalculatorTheme(
+        return CalculatorTheme(id: "5",
             extraFunctionColor:                "#ECF5FF",
             extraFunctionTitleColor:                   "#0D2A4B",
             

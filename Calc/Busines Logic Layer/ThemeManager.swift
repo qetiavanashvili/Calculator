@@ -34,7 +34,7 @@ class ThemeManager {
     
     init() {
         populatedArrayOfThemes()
-        restoreSavedThemeIndex()
+        restoreSavedTheme()
             
         }
         
@@ -43,29 +43,35 @@ class ThemeManager {
         }
     // MARK: - Save & Restore To Disk
 
-    private func restoreSavedThemeIndex() {
-        savedThemeIndex = 0
-        if let previousThemeIndex = dataStore.getValue() as? Int {
-            savedThemeIndex = previousThemeIndex
+    private func restoreSavedTheme() {
+        guard let encodedtheme = dataStore.getValue() as? Data else {
+            return
         }
-       
-        savedTheme = themes[savedThemeIndex]
+        
+       let decoder = JSONDecoder()
+        if let previousTheme = try? decoder.decode(CalculatorTheme.self, from: encodedtheme) {
+            savedTheme = previousTheme
+        }
     }
     
-    private func saveThemeIndexToDisk() {
-        dataStore.set(savedThemeIndex)
-    }
+    private func saveThemeToDisk(_ theme: CalculatorTheme) {
+        let encoder = JSONEncoder()
+        if let encodedTheme = try? encoder.encode(theme) {
+            dataStore.set(encodedTheme)
+        }
+            }
     
     
     // MARK: - Next Theme
 
     func moveToNextTheme() {
 
-    savedThemeIndex = savedThemeIndex + 1
-    if savedThemeIndex > themes.count - 1 {
+        savedThemeIndex = savedThemeIndex + 1
+        if savedThemeIndex > themes.count - 1 {
         savedThemeIndex = 0
-    }
-        savedTheme = themes[savedThemeIndex]
-        saveThemeIndexToDisk()
+        }
+        let theme = themes[savedThemeIndex]
+        savedTheme = theme
+        saveThemeToDisk(theme)
     }
 }
