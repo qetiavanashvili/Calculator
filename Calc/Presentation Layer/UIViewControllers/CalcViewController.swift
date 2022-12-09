@@ -52,9 +52,22 @@ class CalcViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addThemeGestureRecogniser()
         decorateView()
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Gestures
+    
+    private func addThemeGestureRecogniser() {
+        let themeGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.themeGestureRecogniserDidTap(_gesture:)))
+        lcdDisplay.addGestureRecognizer(themeGestureRecogniser)
+    }
+    
+    @objc private func themeGestureRecogniserDidTap(_gesture: UITapGestureRecognizer) {
+        print("User did tap")
+    }
+    
     
     // MARK: Decorate
     
