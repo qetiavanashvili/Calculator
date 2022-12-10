@@ -65,13 +65,35 @@ class ThemeManager {
     // MARK: - Next Theme
 
     func moveToNextTheme() {
-
-        savedThemeIndex = savedThemeIndex + 1
-        if savedThemeIndex > themes.count - 1 {
-        savedThemeIndex = 0
+        
+        // index of saved theme
+        let currentThemeID = currentTheme.id
+        let index: Int? = themes.firstIndex { CalculatorTheme in
+            CalculatorTheme.id == currentThemeID
         }
-        let theme = themes[savedThemeIndex]
+        
+        // reset if something has gone wrong
+        guard let indexOfExistingTheme = index else {
+            if let firstTheme = themes.first {
+                updateSystemWithTheme(firstTheme)
+            }
+            return
+        }
+        
+        // move to next theme
+        var nextThemeIndex = indexOfExistingTheme + 1
+        if nextThemeIndex > themes.count - 1 {
+            nextThemeIndex = 0
+        }
+        
+        // set the theme
+        let theme = themes[nextThemeIndex]
+        updateSystemWithTheme(theme)
+    }
+    
+    private func updateSystemWithTheme(_ theme: CalculatorTheme) {
         savedTheme = theme
         saveThemeToDisk(theme)
     }
 }
+
