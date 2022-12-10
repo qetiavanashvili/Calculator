@@ -34,19 +34,21 @@ import Foundation
 extension ThemeManager {
     
     var darkTheme: CalculatorTheme {
-        return CalculatorTheme(id: "1",
-            extraFunctionColor:             "#000000",
-            extraFunctionTitleColor:        "#FFFFFF",
-            
-            backgroundColor:                "#a6a6a6",
-            displayColor:                   "#000000",
+        return CalculatorTheme(id:          "1",
+                               extraFunctionColor:                "#000000",
+                               extraFunctionTitleColor:                   "#ffffff",
+                               
+                               backgroundColor:             "#a6a6a6",
+                               displayColor:        "#000000",
                                
             operationColor:                 "#ff9f0a",
-            operationTitleColor:            "#FFFFFF",
+            operationTitleColor:            "#ffffff",
+            operationSelectedColor:         "#ffffff",
+            operationTitleSelectedColor:    "#ff9f0a",
                                
             pinpadColor:                    "#333333",
-            pinpadTitleColor:               "#FFFFFF",
-            
-            statusBarStyle: .light)
+            pinpadTitleColor:               "#ffffff",
+                               
+            statusBarStyle:                 .light)
     }
 }

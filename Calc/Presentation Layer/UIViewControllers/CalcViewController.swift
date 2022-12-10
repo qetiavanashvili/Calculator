@@ -145,7 +145,7 @@ class CalcViewController: UIViewController {
         
         button.tintColor = UIColor(hex: currentTheme.operationColor)
         button.setTitleColor(UIColor(hex: currentTheme.operationTitleColor), for: .normal)
-        
+        button.setTitleColor(UIColor(hex: currentTheme.operationTitleSelectedColor), for: .selected)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
     }
     
@@ -153,14 +153,33 @@ class CalcViewController: UIViewController {
         decorateButton(button, usingSlicedImage)
         
         button.tintColor = UIColor(hex: currentTheme.pinpadColor)
-            button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor), for: .normal)
+        button.setTitleColor(UIColor(hex: currentTheme.pinpadTitleColor), for: .normal)
         
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
     }
     
+    // MARK: - Select Operation Buttons
+    
+    private func deselectOperationsButtons() {
+        selectOperationButton(divideButton, false)
+        selectOperationButton(multiplyButton, false)
+        selectOperationButton(minusButton, false)
+        selectOperationButton(addButton, false)
+        
+    }
+    
+    private func selectOperationButton(_ button: UIButton, _ selected: Bool) {
+        button.tintColor = selected ? UIColor(hex: currentTheme.operationSelectedColor) : UIColor(hex: currentTheme.operationColor)
+        button.isSelected = selected
+    }
+        
+        
+        
     // MARK: - IBActions
     
     @IBAction private func clearPressed() {
+        deselectOperationsButtons()
+        
         calculatorEngine.clearPressed()
         refreshLCDDisplay()
     }
@@ -178,26 +197,42 @@ class CalcViewController: UIViewController {
     // MARK: - Operations
     
     @IBAction private func addPressed() {
+        deselectOperationsButtons()
+        selectOperationButton(addButton, true)
+        
         calculatorEngine.addPressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func minusPressed() {
+        deselectOperationsButtons()
+        selectOperationButton(minusButton, true)
+        
         calculatorEngine.minusPressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func multiplyPressed() {
+        deselectOperationsButtons()
+        selectOperationButton(multiplyButton, true)
+
+        
         calculatorEngine.multiplyPressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func dividePressed() {
+        deselectOperationsButtons()
+        selectOperationButton(divideButton, true)
+
+        
         calculatorEngine.dividePressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func equalsPressed() {
+        deselectOperationsButtons()
+        
         calculatorEngine.equalsPressed()
         refreshLCDDisplay()
     }
@@ -205,11 +240,13 @@ class CalcViewController: UIViewController {
     // MARK: - Number Input
     
     @IBAction private func decimalPressed() {
+        deselectOperationsButtons()
         calculatorEngine.decimalPressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func numberPressed(_ sender: UIButton) {
+        deselectOperationsButtons()
         let number = sender.tag
         calculatorEngine.numberPressed(number)
         refreshLCDDisplay()

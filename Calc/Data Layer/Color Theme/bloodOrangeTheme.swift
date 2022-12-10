@@ -34,19 +34,21 @@ import Foundation
 extension ThemeManager {
     
     var bloodOrangeTheme: CalculatorTheme {
-        return CalculatorTheme(id: "6",
-            extraFunctionColor:                "#4A1D41",
-            extraFunctionTitleColor:                   "#FFFFFF",
-            
-            backgroundColor:             "#9C3766",
-            displayColor:        "#FFFFFF",
+        return CalculatorTheme(id:          "9",
+            extraFunctionColor:             "#4A1D41",
+            extraFunctionTitleColor:        "#ffffff",
+                               
+            backgroundColor:                "#9C3766",
+            displayColor:                   "#ffffff",
                                
             operationColor:                 "#8D3362",
-            operationTitleColor:            "#FFFFFF",
+            operationTitleColor:            "#ffffff",
+            operationSelectedColor:         "#AA0E67",
+            operationTitleSelectedColor:    "#ffffff",
                                
             pinpadColor:                    "#C64661",
-            pinpadTitleColor:               "#FFFFFF",
-            
-            statusBarStyle: .light)
+            pinpadTitleColor:               "#ffffff",
+                               
+            statusBarStyle:                 .light)
     }
 }
