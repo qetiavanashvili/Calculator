@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CalcViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LCDDisplay" customModule="Calc" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -337,12 +337,14 @@
                             <constraint firstItem="Gna-pZ-aPL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="UN9-zM-L4x"/>
                             <constraint firstItem="Gna-pZ-aPL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="40" id="fOq-4y-6a0"/>
                         </constraints>
+                        <connections>
+                            <outlet property="label" destination="c9e-yt-XKt" id="Ehm-ch-l8m"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="vgt-Xe-Bc1" id="jR3-EM-6JU"/>
                         <outlet property="clearButton" destination="clQ-kN-I1Y" id="Hz0-KB-Lox"/>
                         <outlet property="decimalButton" destination="ok0-zr-1Cb" id="kNF-xG-6cw"/>
-                        <outlet property="displayLabel" destination="c9e-yt-XKt" id="B7c-RA-YX0"/>
                         <outlet property="divideButton" destination="kM8-yf-xj4" id="CO2-a0-rw2"/>
                         <outlet property="equalButton" destination="F0I-BR-Qhs" id="qSm-Z7-Wdq"/>
                         <outlet property="lcdDisplay" destination="8bC-Xf-vdC" id="Fdt-XX-DqF"/>

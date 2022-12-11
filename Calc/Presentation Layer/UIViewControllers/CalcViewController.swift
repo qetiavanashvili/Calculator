@@ -12,8 +12,7 @@ class CalcViewController: UIViewController {
     
     // MARK: IBOutlets
 
-    @IBOutlet weak var lcdDisplay: UIView!
-    @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var lcdDisplay: LCDDisplay!
     
     @IBOutlet weak var pinpadButton0: UIButton!
     @IBOutlet weak var pinpadButton1: UIButton!
@@ -83,10 +82,7 @@ class CalcViewController: UIViewController {
         
         view.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         lcdDisplay.backgroundColor = .clear
-        displayLabel.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
-
-        
-        displayLabel.textColor = UIColor(hex: currentTheme.displayColor)
+        lcdDisplay.label.textColor = UIColor(hex: currentTheme.displayColor)
         
         setNeedsStatusBarAppearanceUpdate()
         
@@ -255,6 +251,6 @@ class CalcViewController: UIViewController {
     // MARK: - Refresh LCDDisplay
     
     private func refreshLCDDisplay () {
-        displayLabel.text = calculatorEngine.lcdDisplayText
+        lcdDisplay.label.text = calculatorEngine.lcdDisplayText
     }
 }

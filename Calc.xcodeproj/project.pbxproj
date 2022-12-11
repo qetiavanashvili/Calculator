@@ -22,6 +22,7 @@
 		DA8E27E329452895007C2857 /* pinkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27DA29452895007C2857 /* pinkTheme.swift */; };
 		DA8E27E429452895007C2857 /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27DB29452895007C2857 /* purpleTheme.swift */; };
 		DA8E27E6294529C8007C2857 /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27E5294529C8007C2857 /* CalculatorTheme.swift */; };
+		DA8E27E829463FFA007C2857 /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27E729463FFA007C2857 /* LCDDisplay.swift */; };
 		DAD48CBC292423E300E9D4CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBB292423E300E9D4CD /* AppDelegate.swift */; };
 		DAD48CBE292423E300E9D4CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */; };
 		DAD48CC0292423E300E9D4CD /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBF292423E300E9D4CD /* CalcViewController.swift */; };
@@ -67,6 +68,7 @@
 		DA8E27DA29452895007C2857 /* pinkTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pinkTheme.swift; sourceTree = "<group>"; };
 		DA8E27DB29452895007C2857 /* purpleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
 		DA8E27E5294529C8007C2857 /* CalculatorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
+		DA8E27E729463FFA007C2857 /* LCDDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
 		DAD48CB8292423E300E9D4CD /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD48CBB292423E300E9D4CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = "Swift Extensions ";
 			sourceTree = "<group>";
 		};
+		DA8E27E929464592007C2857 /* UIKIT Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				DA8E27E729463FFA007C2857 /* LCDDisplay.swift */,
+			);
+			path = "UIKIT Subclasses";
+			sourceTree = "<group>";
+		};
 		DAD48CAF292423E300E9D4CD = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 		DAE6A69029377B92004E4998 /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				DA8E27E929464592007C2857 /* UIKIT Subclasses */,
 				DAE6A69229377BFC004E4998 /* UIKIT  Extensions */,
 				DAE6A69729378200004E4998 /* UIViewControllers */,
 				DAD48CBB292423E300E9D4CD /* AppDelegate.swift */,
@@ -370,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8E27E829463FFA007C2857 /* LCDDisplay.swift in Sources */,
 				DA7CA118292FFD410033DAEB /* MathEquation.swift in Sources */,
 				DAE6A69529377CAC004E4998 /* UIColor+HexValue.swift in Sources */,
 				DAE6A69B29387351004E4998 /* MathInputController.swift in Sources */,
