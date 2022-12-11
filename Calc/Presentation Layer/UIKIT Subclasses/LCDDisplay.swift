@@ -49,6 +49,32 @@ class LCDDisplay: UIView {
     }
     
     private func sharedInit() {
-        
+        addMenuGestureRecogniser()
+    }
+    
+    // MARK: - Gesture Recogniser
+    private func addMenuGestureRecogniser() {
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressGestureEventFired(_:)))
+        addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc private func longPressGestureEventFired(_ gesture: UILongPressGestureRecognizer) {
+        switch gesture.state {
+        case .possible:
+            print("Possible")
+        case .began:
+            print("began")
+        case .changed:
+            print("changed")
+        case .cancelled:
+            print("cancelled")
+        case .ended:
+            print("ended")
+        case .failed:
+            print("failed")
+        @unknown default:
+            print(" @unknown default")
+            break
+        }
     }
 }
