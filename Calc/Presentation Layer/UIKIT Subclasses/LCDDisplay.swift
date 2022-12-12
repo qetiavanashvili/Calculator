@@ -60,21 +60,20 @@ class LCDDisplay: UIView {
     
     @objc private func longPressGestureEventFired(_ gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
-        case .possible:
-            print("Possible")
+       
         case .began:
-            print("began")
-        case .changed:
-            print("changed")
-        case .cancelled:
-            print("cancelled")
-        case .ended:
-            print("ended")
-        case .failed:
-            print("failed")
-        @unknown default:
-            print(" @unknown default")
+            showMenu(from: gesture)
+       default:
             break
         }
+    }
+    
+    private func showMenu(from gestuRecognizer: UILongPressGestureRecognizer) {
+        let menu = UIMenuController.shared
+        guard menu.isMenuVisible == false else { return }
+            
+        // we want to show menu here
+        print("show menu")
+        
     }
 }
