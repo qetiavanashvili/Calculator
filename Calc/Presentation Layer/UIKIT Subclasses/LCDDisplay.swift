@@ -93,10 +93,15 @@ class LCDDisplay: UIView {
         return action == #selector(UIResponderStandardEditActions.copy(_:)) || action == #selector(UIResponderStandardEditActions.paste(_:))
     }
     @objc override func copy(_ sender: Any?) {
-        print("Copy was pressed")
+        UIPasteboard.general.string = label.text
     }
     
     @objc override func paste(_ sender: Any?) {
-        print("Paste was pressed")
+        let stringFromPasteboard = UIPasteboard.general.string
+        let doubleValueFromPasteboard = stringFromPasteboard?.doubleValue
+        print("Pasting " + (stringFromPasteboard ?? "nil"))
+        print("Pasting \(doubleValueFromPasteboard)")
+        // Todo inform calculator system of number -> doubleValueFromPasteboard
     }
 }
+

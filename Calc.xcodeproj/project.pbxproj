@@ -23,6 +23,7 @@
 		DA8E27E429452895007C2857 /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27DB29452895007C2857 /* purpleTheme.swift */; };
 		DA8E27E6294529C8007C2857 /* CalculatorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27E5294529C8007C2857 /* CalculatorTheme.swift */; };
 		DA8E27E829463FFA007C2857 /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27E729463FFA007C2857 /* LCDDisplay.swift */; };
+		DA8E27EB29478127007C2857 /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E27EA29478127007C2857 /* String+Numbers.swift */; };
 		DAD48CBC292423E300E9D4CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBB292423E300E9D4CD /* AppDelegate.swift */; };
 		DAD48CBE292423E300E9D4CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */; };
 		DAD48CC0292423E300E9D4CD /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CBF292423E300E9D4CD /* CalcViewController.swift */; };
@@ -69,6 +70,7 @@
 		DA8E27DB29452895007C2857 /* purpleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
 		DA8E27E5294529C8007C2857 /* CalculatorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTheme.swift; sourceTree = "<group>"; };
 		DA8E27E729463FFA007C2857 /* LCDDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
+		DA8E27EA29478127007C2857 /* String+Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Numbers.swift"; sourceTree = "<group>"; };
 		DAD48CB8292423E300E9D4CD /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD48CBB292423E300E9D4CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAD48CBD292423E300E9D4CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		DA7FEB8C293BF78200CAAD35 /* Swift Extensions  */ = {
 			isa = PBXGroup;
 			children = (
+				DA8E27EA29478127007C2857 /* String+Numbers.swift */,
 				DA7FEB8A293BF54900CAAD35 /* String + Prefix.swift */,
 			);
 			path = "Swift Extensions ";
@@ -389,6 +392,7 @@
 				DA8E27E6294529C8007C2857 /* CalculatorTheme.swift in Sources */,
 				DA8E27E329452895007C2857 /* pinkTheme.swift in Sources */,
 				DA8E27E129452895007C2857 /* bloodOrangeTheme.swift in Sources */,
+				DA8E27EB29478127007C2857 /* String+Numbers.swift in Sources */,
 				DA7FEB8B293BF54900CAAD35 /* String + Prefix.swift in Sources */,
 				DA7DD50F2941B0ED00266AAF /* ThemeManager.swift in Sources */,
 				DA8E27E229452895007C2857 /* orangeTheme.swift in Sources */,
