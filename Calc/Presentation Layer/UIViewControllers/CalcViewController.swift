@@ -176,6 +176,7 @@ class CalcViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func clearPressed() {
+        clearButton.bounce()
         deselectOperationsButtons()
         
         calculatorEngine.clearPressed()
@@ -183,11 +184,16 @@ class CalcViewController: UIViewController {
     }
     
     @IBAction private func negatePressed() {
+        negateButton.bounce()
+        
         calculatorEngine.negatePressed()
         refreshLCDDisplay()
+        
     }
     
     @IBAction private func percentagePressed() {
+        percentageButton.bounce()
+        
         calculatorEngine.percentagePressed()
         refreshLCDDisplay()
     }
@@ -195,6 +201,8 @@ class CalcViewController: UIViewController {
     // MARK: - Operations
     
     @IBAction private func addPressed() {
+        addButton.bounce()
+        
         deselectOperationsButtons()
         selectOperationButton(addButton, true)
         
@@ -203,6 +211,8 @@ class CalcViewController: UIViewController {
     }
     
     @IBAction private func minusPressed() {
+        minusButton.bounce()
+        
         deselectOperationsButtons()
         selectOperationButton(minusButton, true)
         
@@ -211,6 +221,8 @@ class CalcViewController: UIViewController {
     }
     
     @IBAction private func multiplyPressed() {
+        multiplyButton.bounce()
+        
         deselectOperationsButtons()
         selectOperationButton(multiplyButton, true)
         
@@ -220,6 +232,8 @@ class CalcViewController: UIViewController {
     }
     
     @IBAction private func dividePressed() {
+        divideButton.bounce()
+        
         deselectOperationsButtons()
         selectOperationButton(divideButton, true)
         
@@ -229,6 +243,8 @@ class CalcViewController: UIViewController {
     }
     
     @IBAction private func equalsPressed() {
+        equalButton.bounce()
+        
         deselectOperationsButtons()
         
         calculatorEngine.equalsPressed()
@@ -238,12 +254,16 @@ class CalcViewController: UIViewController {
     // MARK: - Number Input
     
     @IBAction private func decimalPressed() {
+        decimalButton.bounce()
+        
         deselectOperationsButtons()
         calculatorEngine.decimalPressed()
         refreshLCDDisplay()
     }
     
     @IBAction private func numberPressed(_ sender: UIButton) {
+        sender.bounce()
+        
         deselectOperationsButtons()
         let number = sender.tag
         calculatorEngine.numberPressed(number)
