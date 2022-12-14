@@ -66,6 +66,7 @@ class CalcViewController: UIViewController {
     }
     
     @objc private func themeGestureRecogniserDidTap(_gesture: UITapGestureRecognizer) {
+
         decorateViewWithNextTheme()
     }
     
@@ -261,7 +262,7 @@ class CalcViewController: UIViewController {
     }
     
     @objc private func didRecievePasteNotification(notification: Notification) {
-        guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
+         guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
         
         pasteNumberIntoCalculator(from: Decimal(doubleValue))
     }

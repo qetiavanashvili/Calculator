@@ -213,6 +213,7 @@ struct MathInputController {
             mathEquation.rhs = decimal
         }
         
+        
         lcdDisplayText = formatLCDDisplay(decimal)
     }
 }

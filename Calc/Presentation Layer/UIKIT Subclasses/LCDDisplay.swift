@@ -85,6 +85,8 @@ class LCDDisplay: UIView {
         menu.showMenu(from: self, rect: rect)
     }
     
+   
+    
     override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -102,4 +104,5 @@ class LCDDisplay: UIView {
         let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
         NotificationCenter.default.post(name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil, userInfo: userInfo)
     }
+    
 }
