@@ -60,10 +60,10 @@ class LCDDisplay: UIView {
     
     @objc private func longPressGestureEventFired(_ gesture: UILongPressGestureRecognizer) {
         switch gesture.state {
-       
+            
         case .began:
             showMenu(from: gesture)
-       default:
+        default:
             break
         }
     }
@@ -97,11 +97,9 @@ class LCDDisplay: UIView {
     }
     
     @objc override func paste(_ sender: Any?) {
-        let stringFromPasteboard = UIPasteboard.general.string
-        let doubleValueFromPasteboard = stringFromPasteboard?.doubleValue
-        print("Pasting " + (stringFromPasteboard ?? "nil"))
-        print("Pasting \(doubleValueFromPasteboard)")
-        // Todo inform calculator system of number -> doubleValueFromPasteboard
+        guard let numberToPaste = UIPasteboard.general.string?.doubleValue else { return }
+        
+        let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
+        NotificationCenter.default.post(name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil, userInfo: userInfo)
     }
 }
-

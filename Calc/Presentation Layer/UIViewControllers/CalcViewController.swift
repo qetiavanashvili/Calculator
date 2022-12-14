@@ -11,7 +11,7 @@ import UIKit
 class CalcViewController: UIViewController {
     
     // MARK: IBOutlets
-
+    
     @IBOutlet weak var lcdDisplay: LCDDisplay!
     
     @IBOutlet weak var pinpadButton0: UIButton!
@@ -38,7 +38,7 @@ class CalcViewController: UIViewController {
     @IBOutlet weak var decimalButton: UIButton!
     
     // MARK: Color Themes
- 
+    
     private var currentTheme: CalculatorTheme {
         return ThemeManager.shared.currentTheme
     }
@@ -53,6 +53,7 @@ class CalcViewController: UIViewController {
         super.viewDidLoad()
         addThemeGestureRecogniser()
         redecorateView()
+        registerForNotification()
         // Do any additional setup after loading the view.
     }
     
@@ -168,9 +169,9 @@ class CalcViewController: UIViewController {
         button.tintColor = selected ? UIColor(hex: currentTheme.operationSelectedColor) : UIColor(hex: currentTheme.operationColor)
         button.isSelected = selected
     }
-        
-        
-        
+    
+    
+    
     // MARK: - IBActions
     
     @IBAction private func clearPressed() {
@@ -211,7 +212,7 @@ class CalcViewController: UIViewController {
     @IBAction private func multiplyPressed() {
         deselectOperationsButtons()
         selectOperationButton(multiplyButton, true)
-
+        
         
         calculatorEngine.multiplyPressed()
         refreshLCDDisplay()
@@ -220,7 +221,7 @@ class CalcViewController: UIViewController {
     @IBAction private func dividePressed() {
         deselectOperationsButtons()
         selectOperationButton(divideButton, true)
-
+        
         
         calculatorEngine.dividePressed()
         refreshLCDDisplay()
@@ -253,4 +254,22 @@ class CalcViewController: UIViewController {
     private func refreshLCDDisplay () {
         lcdDisplay.label.text = calculatorEngine.lcdDisplayText
     }
+    
+    // MARK: - Notifications
+    private func registerForNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil)
+    }
+    
+    @objc private func didRecievePasteNotification(notification: Notification) {
+        guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
+        
+        pasteNumberIntoCalculator(from: Decimal(doubleValue))
+    }
+    
+    // MARK: Copy and paste
+    private func pasteNumberIntoCalculator(from decimal: Decimal) {
+        calculatorEngine.pasteInNumber(from: decimal)
+        refreshLCDDisplay()
+    }
 }
+
