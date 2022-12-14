@@ -85,6 +85,10 @@ class LCDDisplay: UIView {
         menu.showMenu(from: self, rect: rect)
     }
     
+    private func hideMenu() {
+        UIMenuController.shared.hideMenu(from: self)
+        
+    }
    
     
     override var canBecomeFirstResponder: Bool {
@@ -103,6 +107,12 @@ class LCDDisplay: UIView {
         
         let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
         NotificationCenter.default.post(name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil, userInfo: userInfo)
+    }
+    
+    // MARK: - Color Themes
+    
+    func prepareForColorThemeUpdate() {
+        hideMenu()
     }
     
 }
