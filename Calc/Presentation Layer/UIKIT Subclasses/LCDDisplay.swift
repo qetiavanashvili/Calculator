@@ -71,7 +71,8 @@ class LCDDisplay: UIView {
     // MARK: - UIMenuController
     
     private func showMenu(from gestuRecognizer: UILongPressGestureRecognizer) {
-        
+       
+        highlightScreen()
         becomeFirstResponder()
         
         let menu = UIMenuController.shared
@@ -87,9 +88,10 @@ class LCDDisplay: UIView {
     
     private func hideMenu() {
         UIMenuController.shared.hideMenu(from: self)
+        unhighlightScreen()
         
     }
-   
+    
     
     override var canBecomeFirstResponder: Bool {
         return true
@@ -115,4 +117,24 @@ class LCDDisplay: UIView {
         hideMenu()
     }
     
+    // MARK: - Animations
+    
+    private func highlightScreen() {
+        let theme = ThemeManager.shared.currentTheme
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseInOut) { [weak self] in
+            self?.backgroundColor = UIColor(hex: theme.operationColor)
+            self?.label.textColor = UIColor(hex: theme.operationTitleColor)
+        } completion: { _ in
+            
+        }
+    }
+    private func unhighlightScreen() {
+        let theme = ThemeManager.shared.currentTheme
+        UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut) { [weak self] in
+            self?.backgroundColor = UIColor.clear
+            self?.label.textColor = UIColor(hex: theme.displayColor)
+        } completion: { _ in
+            
+        }
+    }
 }
