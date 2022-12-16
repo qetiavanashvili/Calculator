@@ -49,6 +49,7 @@ class LCDDisplay: UIView {
     }
     
     private func sharedInit() {
+        layer.cornerRadius = 20
         addMenuGestureRecogniser()
     }
     
@@ -72,6 +73,7 @@ class LCDDisplay: UIView {
     
     private func showMenu(from gestuRecognizer: UILongPressGestureRecognizer) {
        
+        registarNotification()
         highlightScreen()
         becomeFirstResponder()
         
@@ -88,7 +90,7 @@ class LCDDisplay: UIView {
     
     private func hideMenu() {
         UIMenuController.shared.hideMenu(from: self)
-        unhighlightScreen()
+       
         
     }
     
@@ -114,6 +116,7 @@ class LCDDisplay: UIView {
     // MARK: - Color Themes
     
     func prepareForColorThemeUpdate() {
+        unhighlightScreen(animated: false)
         hideMenu()
     }
     
@@ -128,7 +131,7 @@ class LCDDisplay: UIView {
             
         }
     }
-    private func unhighlightScreen() {
+    private func unhighlightScreen(animated: Bool) {
         let theme = ThemeManager.shared.currentTheme
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseInOut) { [weak self] in
             self?.backgroundColor = UIColor.clear
@@ -136,5 +139,22 @@ class LCDDisplay: UIView {
         } completion: { _ in
             
         }
+    }
+    
+    // MARK: - Notifications
+    
+    private func registarNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.willHideEditMenu(_:)), name: UIMenuController.willHideMenuNotification, object: nil)
+    }
+    
+    private func unregistarNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIMenuController.willHideMenuNotification, object: nil)
+        
+    }
+    
+    @objc private func willHideEditMenu(_ notification: Notification) {
+        unhighlightScreen(animated: true)
+        unregistarNotifications()
+        
     }
 }
