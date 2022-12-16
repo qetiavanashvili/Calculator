@@ -11,46 +11,15 @@ import UIKit
 extension UIButton {
     
     func bounce() {
-        moveUp()
-    }
-    
-    
-    func growLarger() {
-        UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseOut, .allowUserInteraction]) { [weak self] in
-            self?.transform = CGAffineTransform(scaleX: 4, y: 4)
+        UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseOut]) { [weak self] in
+            self?.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         } completion: { _ in
-            
-        }
-    }
-        
-        func makeSmaller() {
-            UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseOut, .allowUserInteraction]) { [weak self] in
-                self?.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseInOut]) { [weak self] in
+                self?.transform = CGAffineTransform.identity
             } completion: { _ in
                 
             }
-                
-    }
-    
-    func moveUp() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseOut, .allowUserInteraction]) { [weak self] in
-            self?.transform = CGAffineTransform(translationX: 0, y: -50)
-        } completion: { _ in
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                self?.transform = CGAffineTransform(translationX: 0, y: 5)
-            } completion: { _ in
-                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                        self?.transform = CGAffineTransform(translationX: 0, y: -2)
-                    } completion: { _ in
-                        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) { [weak self] in
-                            self?.transform = CGAffineTransform(translationX: 0, y: 0)
-                        } completion: { _ in
-                    
-                        }
-                    }
-                }
-            }
-        
         }
-    
     }
+}
+
