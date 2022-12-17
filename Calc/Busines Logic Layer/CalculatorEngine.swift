@@ -36,7 +36,7 @@ struct CalculatorEngine {
     private var inputController = MathInputController()
     
     // MARK: - Equation History
-    private var historyLog: [MathEquation] = []
+    private(set) var historyLog: [MathEquation] = []
     
     // MARK: - LCD Display
     var lcdDisplayText: String {
