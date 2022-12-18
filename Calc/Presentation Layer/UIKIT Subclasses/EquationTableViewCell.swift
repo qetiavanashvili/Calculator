@@ -8,6 +8,10 @@
 import UIKit
 
 class EquationTableViewCell: UITableViewCell {
+    
+    @IBOutlet var lhslabel: UILabel!
+    @IBOutlet var rhslabel: UILabel!
+    @IBOutlet var resultlabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

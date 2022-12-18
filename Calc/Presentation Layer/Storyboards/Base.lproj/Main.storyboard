@@ -373,19 +373,65 @@
         <scene sceneID="HOt-DR-rvb">
             <objects>
                 <tableViewController storyboardIdentifier="LogViewController" id="lw0-G6-S6l" customClass="LogViewController" customModule="Calc" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="teK-bT-poP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="teK-bT-poP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EquationTableViewCell" rowHeight="121" id="Zcf-6t-noJ" customClass="EquationTableViewCell" customModule="Calc" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="121"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EquationTableViewCell" rowHeight="125" id="Zcf-6t-noJ" customClass="EquationTableViewCell" customModule="Calc" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zcf-6t-noJ" id="Avq-7l-O7F">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="121"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g1-a0-2qH">
+                                            <rect key="frame" x="20" y="21" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="= 200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbV-VE-IP9">
+                                            <rect key="frame" x="20" y="83" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXm-B7-TEw">
+                                            <rect key="frame" x="20" y="52" width="353" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    <constraints>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="00K-Gb-Gui"/>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="0S7-jL-Ky8"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="2jt-4p-vZd"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="4HO-ou-XHy"/>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="top" secondItem="SXm-B7-TEw" secondAttribute="bottom" constant="10" id="4iD-vf-emT"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="9wa-dn-ais"/>
+                                        <constraint firstItem="5g1-a0-2qH" firstAttribute="top" secondItem="Avq-7l-O7F" secondAttribute="topMargin" constant="10" id="DmU-o9-5iJ"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="FsD-86-VYD"/>
+                                        <constraint firstItem="5g1-a0-2qH" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="HW2-xi-hbF"/>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="JQj-e1-Akg"/>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="top" secondItem="SXm-B7-TEw" secondAttribute="bottom" constant="10" id="MGe-lp-xPg"/>
+                                        <constraint firstItem="5g1-a0-2qH" firstAttribute="trailing" secondItem="Avq-7l-O7F" secondAttribute="trailingMargin" id="MoR-GM-NEh"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="top" secondItem="5g1-a0-2qH" secondAttribute="bottom" constant="10" id="Rev-eR-dFn"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="top" secondItem="5g1-a0-2qH" secondAttribute="bottom" constant="10" id="V3M-id-uc7"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="ZCT-dm-zya"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="ewC-dQ-Dkl"/>
+                                        <constraint firstItem="YbV-VE-IP9" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="n46-rB-qtv"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="oUi-eG-IuN"/>
+                                        <constraint firstItem="SXm-B7-TEw" firstAttribute="leading" secondItem="Avq-7l-O7F" secondAttribute="leadingMargin" id="vse-dr-zdx"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lhslabel" destination="5g1-a0-2qH" id="v2W-IR-Mnw"/>
+                                    <outlet property="resultlabel" destination="YbV-VE-IP9" id="o06-dV-9fk"/>
+                                    <outlet property="rhslabel" destination="SXm-B7-TEw" id="vzJ-En-hiw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

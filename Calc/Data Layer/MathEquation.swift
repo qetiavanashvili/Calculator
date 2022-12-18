@@ -74,13 +74,13 @@ struct MathEquation {
     // MARK: - String Representation
     func generatePrintOut() -> String {
       
-        let operationString = generateStringRepresentation()
+        let operationString = generateStringRepresentationOfOperation()
         return lhs.formatted() + " " + operationString + " " + (rhs?.formatted() ?? "")
         + " = " + (result?.formatted() ?? "")
         
     }
     
-    private func generateStringRepresentation() -> String {
+    func generateStringRepresentationOfOperation() -> String {
         switch operation {
         case .add: return "+"
         case .subtract: return "-"

@@ -35,8 +35,17 @@ class LogViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EquationTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EquationTableViewCell", for: indexPath) as? EquationTableViewCell else {
+            return UITableViewCell()
+        }
 
+        
+        let equation = datasource[indexPath.row]
+        cell.lhslabel.text = equation.lhs.formatted()
+        cell.rhslabel.text = equation.generateStringRepresentationOfOperation() + " " + (equation.rhs?.formatted() ?? "")
+        cell.resultlabel.text = "= " + (equation.result?.formatted() ?? "")
+        
+        
         return cell
     }
 
