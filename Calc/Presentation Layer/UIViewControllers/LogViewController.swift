@@ -16,12 +16,20 @@ class LogViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setupNavigationBar()
     }
+    
+    // MARK: - Navigation Bar
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneButtonPressed))
+        
+    }
+                                                            
+    @objc private func doneButtonPressed() {
+        dismiss(animated: true, completion: nil)
+            
+        }
 
     // MARK: - Table view data source
 

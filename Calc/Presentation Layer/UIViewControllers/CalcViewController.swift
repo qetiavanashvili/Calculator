@@ -296,6 +296,8 @@ class CalcViewController: UIViewController {
         
         presentHistoryLogScreen()
     }
+    
+    // MARK: - History Log Screen
         
         private func presentHistoryLogScreen() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -304,7 +306,9 @@ class CalcViewController: UIViewController {
             }
             
             logViewController.datasource = calculatorEngine.historyLog
-            present(logViewController, animated: true, completion: nil)
+            
+            let navigationController = UINavigationController(rootViewController: logViewController)
+            present(navigationController, animated: true, completion: nil)
         }
         
         
