@@ -127,8 +127,17 @@ struct CalculatorEngine {
         if inputController.isCompleted {
             inputController = MathInputController()
         }
+        
         inputController.pasteIn(decimal)
     }
     
+    mutating func pasteInMathEquation(from mathEquation: MathEquation) {
+        guard let result = mathEquation.result else {
+            return
+        }
+        
+        inputController = MathInputController()
+        pasteInNumber(from: result)
+    }
     
 }

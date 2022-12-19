@@ -279,11 +279,20 @@ class CalcViewController: UIViewController {
     // MARK: - Notifications
     private func registerForNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil)
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.displayHistory"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("iOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceivePasteMathEquationNotification(notification:)), name: Notification.Name("iOSBFRee.com.Calc.LogViewController.pasteMathEquation"), object: nil)
         
     }
     
+    @objc private func didReceivePasteMathEquationNotification(notification: Notification) {
+        
+        guard let mathEquation = notification.userInfo?["PasteKey"] as? MathEquation else { return }
+        
+        pasteMathEquationIntoCalculator(from: mathEquation)
+    }
     
     
     @objc private func didRecievePasteNotification(notification: Notification) {
@@ -298,26 +307,32 @@ class CalcViewController: UIViewController {
     }
     
     // MARK: - History Log Screen
-        
-        private func presentHistoryLogScreen() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let logViewController = storyboard.instantiateViewController(withIdentifier: "LogViewController") as? LogViewController else {
-                return
-            }
-            
-            logViewController.datasource = calculatorEngine.historyLog
-            
-            let navigationController = UINavigationController(rootViewController: logViewController)
-            present(navigationController, animated: true, completion: nil)
+    
+    private func presentHistoryLogScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let logViewController = storyboard.instantiateViewController(withIdentifier: "LogViewController") as? LogViewController else {
+            return
         }
         
+        logViewController.datasource = calculatorEngine.historyLog
         
-        
-        // MARK: Copy and paste
-        private func pasteNumberIntoCalculator(from decimal: Decimal) {
-            calculatorEngine.pasteInNumber(from: decimal)
-            refreshLCDDisplay()
-        }
+        let navigationController = UINavigationController(rootViewController: logViewController)
+        present(navigationController, animated: true, completion: nil)
     }
     
+    
+    
+    // MARK: Copy and paste
+    private func pasteNumberIntoCalculator(from decimal: Decimal) {
+        calculatorEngine.pasteInNumber(from: decimal)
+        refreshLCDDisplay()
+    }
+    
+    
+    private func pasteMathEquationIntoCalculator(from mathEquation: MathEquation) {
+        calculatorEngine.pasteInMathEquation(from: mathEquation)
+        refreshLCDDisplay()
+        
+    }
+}
 
