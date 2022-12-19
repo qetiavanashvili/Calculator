@@ -56,6 +56,7 @@ class LogViewController: UITableViewController {
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let equation = datasource[indexPath.row]

@@ -280,7 +280,7 @@ class CalcViewController: UIViewController {
     private func registerForNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil)
        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.displayHistory"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("iOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil)
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.didReceivePasteMathEquationNotification(notification:)), name: Notification.Name("iOSBFRee.com.Calc.LogViewController.pasteMathEquation"), object: nil)
