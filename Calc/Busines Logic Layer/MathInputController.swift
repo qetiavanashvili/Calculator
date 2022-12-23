@@ -29,6 +29,12 @@ struct MathInputController {
     private(set) var mathEquation = MathEquation(lhs: .zero)
     private var isEnteringDecimal = false
     
+    // MARK: - Initialise
+    
+    init(from mathInputController: MathInputController) {
+        lhs  = mathInputController.result ?? Decimal(0)
+    }
+    
     
     // MARK: - LCD Display
 
