@@ -70,6 +70,11 @@ struct CalculatorEngine {
     // MARK: - Operations
     
     mutating func addPressed() {
+        if inputController.isReadyToExecute {
+            executeMathInputController()
+            populateFromResult()
+        }
+        
         if inputController.isCompleted {
             populateFromResult()
         }
@@ -78,6 +83,11 @@ struct CalculatorEngine {
     }
     
     mutating func minusPressed() {
+        if inputController.isReadyToExecute {
+            executeMathInputController()
+            populateFromResult()
+        }
+        
         if inputController.isCompleted {
             populateFromResult()
         }
@@ -86,6 +96,11 @@ struct CalculatorEngine {
     }
     
     mutating func multiplyPressed() {
+        if inputController.isReadyToExecute {
+            executeMathInputController()
+            populateFromResult()
+        }
+        
         if inputController.isCompleted {
             populateFromResult()
         }
@@ -94,6 +109,11 @@ struct CalculatorEngine {
     }
     
     mutating func dividePressed() {
+        if inputController.isReadyToExecute {
+            executeMathInputController()
+            populateFromResult()
+        }
+        
         if inputController.isCompleted {
             populateFromResult()
         }
@@ -103,13 +123,16 @@ struct CalculatorEngine {
     
     mutating func equalsPressed() {
         guard inputController.isCompleted == false else { return }
-        
-        inputController.execute()
-        historyLog.append(inputController.mathEquation)
-        printEquationToDebugConsole()
+        executeMathInputController()
+        ()
         
     }
     
+    private mutating func executeMathInputController() {
+        inputController.execute()
+        historyLog.append(inputController.mathEquation)
+        printEquationToDebugConsole()
+    }
     
     // MARK: - Number Input
     
