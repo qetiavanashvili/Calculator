@@ -120,7 +120,7 @@ struct CalculatorEngine {
     
     // MARK: - Debug Console
     private func printEquationToDebugConsole() {
-        print("Equation:  " + inputController.mathEquation.generatePrintOut())
+        print("Equation:  " + inputController.generatePrintOut())
     }
     
     // MARK: - History Log

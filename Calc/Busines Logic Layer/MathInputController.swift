@@ -69,6 +69,11 @@ struct MathInputController {
         }
     }
     
+    func generatePrintOut() -> String {
+        return mathEquation.generatePrintOut()
+    }
+    
+    
     // MARK: - Initialiser
       
     init() {
