@@ -317,6 +317,12 @@ class CalcViewController: UIViewController {
         logViewController.datasource = calculatorEngine.historyLog
         
         let navigationController = UINavigationController(rootViewController: logViewController)
+        
+        let theme = ThemeManager.shared.currentTheme
+        navigationController.navigationBar.backgroundColor = UIColor(hex: theme.backgroundColor)
+        navigationController.navigationBar.tintColor = UIColor(hex: theme.displayColor)
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
         present(navigationController, animated: true, completion: nil)
     }
     
