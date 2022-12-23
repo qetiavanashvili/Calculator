@@ -68,7 +68,11 @@ struct CalculatorEngine {
     // MARK: - Operations
     
     mutating func addPressed() {
-        guard inputController.isCompleted == false else { return }
+        if inputController.isCompleted {
+            let result = inputController.result ?? Decimal(0)
+            inputController = MathInputController()
+            inputController.lhs = result
+        }
         
         inputController.addPressed()
     }
