@@ -266,7 +266,7 @@ class CalcViewController: UIViewController {
         
         deselectOperationsButtons()
         let number = sender.tag
-        calculatorEngine.numberPressed(number)
+        calculatorEngine.pinPadPressed(number)
         refreshLCDDisplay()
     }
     
