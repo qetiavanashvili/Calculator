@@ -33,7 +33,7 @@
 		DAD48CC3292423E300E9D4CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD48CC1292423E300E9D4CD /* Main.storyboard */; };
 		DAD48CC5292423E900E9D4CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD48CC4292423E900E9D4CD /* Assets.xcassets */; };
 		DAD48CC8292423E900E9D4CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD48CC6292423E900E9D4CD /* LaunchScreen.storyboard */; };
-		DAD48CD3292423E900E9D4CD /* MathEquationTests in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CD2292423E900E9D4CD /* MathEquationTests */; };
+		DAD48CD3292423E900E9D4CD /* MathEquationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD48CD2292423E900E9D4CD /* MathEquationTests.swift */; };
 		DAE6A68E29377B6C004E4998 /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A68D29377B6C004E4998 /* CalculatorEngine.swift */; };
 		DAE6A69529377CAC004E4998 /* UIColor+HexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A69429377CAC004E4998 /* UIColor+HexValue.swift */; };
 		DAE6A69B29387351004E4998 /* MathInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6A69A29387351004E4998 /* MathInputController.swift */; };
@@ -41,13 +41,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		DAD48CCF292423E900E9D4CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAD48CB0292423E300E9D4CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAD48CB7292423E300E9D4CD;
-			remoteInfo = Calc;
-		};
-		DAD48CD9292423E900E9D4CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAD48CB0292423E300E9D4CD /* Project object */;
 			proxyType = 1;
@@ -86,8 +79,7 @@
 		DAD48CC7292423E900E9D4CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAD48CC9292423E900E9D4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAD48CCE292423E900E9D4CD /* CalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD48CD2292423E900E9D4CD /* MathEquationTests */ = {isa = PBXFileReference; lastKnownFileType = text; path = MathEquationTests; sourceTree = "<group>"; };
-		DAD48CD8292423E900E9D4CD /* CalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD48CD2292423E900E9D4CD /* MathEquationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquationTests.swift; sourceTree = "<group>"; };
 		DAE6A68D29377B6C004E4998 /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		DAE6A69429377CAC004E4998 /* UIColor+HexValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexValue.swift"; sourceTree = "<group>"; };
 		DAE6A69A29387351004E4998 /* MathInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInputController.swift; sourceTree = "<group>"; };
@@ -102,13 +94,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DAD48CCB292423E900E9D4CD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD48CD5292423E900E9D4CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -184,7 +169,6 @@
 			children = (
 				DAD48CB8292423E300E9D4CD /* Calc.app */,
 				DAD48CCE292423E900E9D4CD /* CalcTests.xctest */,
-				DAD48CD8292423E900E9D4CD /* CalcUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +190,7 @@
 		DAD48CD1292423E900E9D4CD /* MathEquationTests */ = {
 			isa = PBXGroup;
 			children = (
-				DAD48CD2292423E900E9D4CD /* MathEquationTests */,
+				DAD48CD2292423E900E9D4CD /* MathEquationTests.swift */,
 			);
 			path = MathEquationTests;
 			sourceTree = "<group>";
@@ -300,24 +284,6 @@
 			productReference = DAD48CCE292423E900E9D4CD /* CalcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DAD48CD7292423E900E9D4CD /* CalcUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAD48CE8292423E900E9D4CD /* Build configuration list for PBXNativeTarget "CalcUITests" */;
-			buildPhases = (
-				DAD48CD4292423E900E9D4CD /* Sources */,
-				DAD48CD5292423E900E9D4CD /* Frameworks */,
-				DAD48CD6292423E900E9D4CD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAD48CDA292423E900E9D4CD /* PBXTargetDependency */,
-			);
-			name = CalcUITests;
-			productName = CalcUITests;
-			productReference = DAD48CD8292423E900E9D4CD /* CalcUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -332,10 +298,6 @@
 						CreatedOnToolsVersion = 14.1;
 					};
 					DAD48CCD292423E900E9D4CD = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = DAD48CB7292423E300E9D4CD;
-					};
-					DAD48CD7292423E900E9D4CD = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = DAD48CB7292423E300E9D4CD;
 					};
@@ -356,7 +318,6 @@
 			targets = (
 				DAD48CB7292423E300E9D4CD /* Calc */,
 				DAD48CCD292423E900E9D4CD /* CalcTests */,
-				DAD48CD7292423E900E9D4CD /* CalcUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,13 +334,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DAD48CCC292423E900E9D4CD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD48CD6292423E900E9D4CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -426,14 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD48CD3292423E900E9D4CD /* MathEquationTests in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAD48CD4292423E900E9D4CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DAD48CD3292423E900E9D4CD /* MathEquationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,11 +391,6 @@
 			isa = PBXTargetDependency;
 			target = DAD48CB7292423E300E9D4CD /* Calc */;
 			targetProxy = DAD48CCF292423E900E9D4CD /* PBXContainerItemProxy */;
-		};
-		DAD48CDA292423E900E9D4CD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAD48CB7292423E300E9D4CD /* Calc */;
-			targetProxy = DAD48CD9292423E900E9D4CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -680,40 +622,6 @@
 			};
 			name = Release;
 		};
-		DAD48CE9292423E900E9D4CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.CalcUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Calc;
-			};
-			name = Debug;
-		};
-		DAD48CEA292423E900E9D4CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.CalcUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Calc;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -740,15 +648,6 @@
 			buildConfigurations = (
 				DAD48CE6292423E900E9D4CD /* Debug */,
 				DAD48CE7292423E900E9D4CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAD48CE8292423E900E9D4CD /* Build configuration list for PBXNativeTarget "CalcUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAD48CE9292423E900E9D4CD /* Debug */,
-				DAD48CEA292423E900E9D4CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

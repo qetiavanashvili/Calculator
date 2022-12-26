@@ -13,7 +13,7 @@ import XCTest
     
     
     func testAddition() throws {
-        var mathEquation = mathEquation(lhs: .zero)
+        var mathEquation = MathEquation(lhs: .zero)
         mathEquation.lhs = 4
         mathEquation.operation = .add
         mathEquation.rhs = 4
@@ -24,7 +24,7 @@ import XCTest
     }
     
     func testSubtract() throws {
-        var mathEquation = mathEquation(lhs: .zero)
+        var mathEquation = MathEquation(lhs: .zero)
         mathEquation.lhs = 4
         mathEquation.operation = .subtract
         mathEquation.rhs = 4
@@ -37,7 +37,7 @@ import XCTest
     
     
     func testMultiplication() throws {
-        var mathEquation = mathEquation(lhs: .zero)
+        var mathEquation = MathEquation(lhs: .zero)
         mathEquation.lhs = 4
         mathEquation.operation = .multiply
         mathEquation.rhs = 4
@@ -48,7 +48,7 @@ import XCTest
     }
     
     func testDivide() throws {
-        var mathEquation = mathEquation(lhs: .zero)
+        var mathEquation = MathEquation(lhs: .zero)
         mathEquation.lhs = 4
         mathEquation.operation = .divide
         mathEquation.rhs = 4
