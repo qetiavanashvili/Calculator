@@ -7,24 +7,10 @@
 
 import XCTest
 @testable import Calc
-
-class CalculatorEngineAdditionTests: XCTestCase {
-    
-    func testExample() throws {
-        var calculatorEngine = CalculatorEngine()
-        
-        calculatorEngine.pinPadPressed(1)
-        calculatorEngine.addPressed()
-        calculatorEngine.pinPadPressed(1)
-        calculatorEngine.equalsPressed()
-        
-        XCTAssertTrue(calculatorEngine.lcdDisplayText == "2")
-    }
-    
     
     // MARK: - Equals Button
     
-    func testPinPadNumberWithEquals() throws {
+    func testPinPadNumberAndEquals() throws {
         
         for lhsPinPadNumber in 0...9 {
             for rhsPinPadNumber in 0...9 {
@@ -41,7 +27,7 @@ class CalculatorEngineAdditionTests: XCTestCase {
     }
     
     
-    func testContinuousPinPadNumberWithEquals() throws {
+    func testContinuousPinPadNumberAndEquals() throws {
         var calculatorEngine = CalculatorEngine()
         
         for lhsPinPadNumber in 0...9 {
@@ -59,7 +45,7 @@ class CalculatorEngineAdditionTests: XCTestCase {
     }
     
     // MARK: - Operation Buttons
-    func testPinPadNumberByPassingEquals() throws {
+    func testPinPadNumberAndOperation() throws {
         
         for lhsPinPadNumber in 0...9 {
             for rhsPinPadNumber in 0...9 {
@@ -74,7 +60,7 @@ class CalculatorEngineAdditionTests: XCTestCase {
         }
     }
     
-    func testContinuousPinPadNumberByPassingEquals() throws {
+    func testContinuousPinPadNumberAndOperation() throws {
         
         for lhsPinPadNumber in 0...9 {
                 var calculatorEngine = CalculatorEngine()
@@ -95,4 +81,4 @@ class CalculatorEngineAdditionTests: XCTestCase {
     
     
     
-}
+
