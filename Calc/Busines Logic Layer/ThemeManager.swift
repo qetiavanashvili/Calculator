@@ -13,7 +13,7 @@ class ThemeManager {
     static let shared = ThemeManager ()
     
     // MARK: - Data Storage
-    private var dataStore = DataStoreManager(key: "IOSBFree.com.Calc.ThemeManager.ThemeIndex")
+    private var dataStore = DataStoreManager(key: ThemeManager.keys.dataStore)
     
     // MARK: - Themes
     

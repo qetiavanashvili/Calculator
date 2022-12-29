@@ -125,7 +125,7 @@ class CalcViewController: UIViewController {
     
     
     private func decorateButton(_ button: UIButton, _ usingSlicedImage: Bool = false) {
-        let image = usingSlicedImage ? UIImage(named: "CircleSliced") : UIImage(named: "Circle")
+        let image = usingSlicedImage ? UIImage(named: UIImage.keys.circleSliced) : UIImage(named: UIImage.keys.circle)
         button.setBackgroundImage(image, for: .normal)
         button.backgroundColor = .clear
     }
@@ -278,25 +278,25 @@ class CalcViewController: UIViewController {
     
     // MARK: - Notifications
     private func registerForNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name("iOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name(LCDDisplay.keys.pasteNumberNotification), object: nil)
        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("iOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name(LCDDisplay.keys.historyLogNotification), object: nil)
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceivePasteMathEquationNotification(notification:)), name: Notification.Name("iOSBFRee.com.Calc.LogViewController.pasteMathEquation"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReceivePasteMathEquationNotification(notification:)), name: Notification.Name(LogViewController.keys.pasteEquationNotification), object: nil)
         
     }
     
     @objc private func didReceivePasteMathEquationNotification(notification: Notification) {
         
-        guard let mathEquation = notification.userInfo?["PasteKey"] as? MathEquation else { return }
+        guard let mathEquation = notification.userInfo?[LogViewController.keys.pasteNumberKey] as? MathEquation else { return }
         
         pasteMathEquationIntoCalculator(from: mathEquation)
     }
     
     
     @objc private func didRecievePasteNotification(notification: Notification) {
-        guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
+        guard let doubleValue = notification.userInfo?[LCDDisplay.keys.pasteNumberKey] as? Double else { return }
         
         pasteNumberIntoCalculator(from: Decimal(doubleValue))
     }
@@ -309,8 +309,8 @@ class CalcViewController: UIViewController {
     // MARK: - History Log Screen
     
     private func presentHistoryLogScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let logViewController = storyboard.instantiateViewController(withIdentifier: "LogViewController") as? LogViewController else {
+        let storyboard = UIStoryboard(name: UIStoryboard.keys.mainStoryboard, bundle: nil)
+        guard let logViewController = storyboard.instantiateViewController(withIdentifier: UIStoryboard.keys.logViewController) as? LogViewController else {
             return
         }
         

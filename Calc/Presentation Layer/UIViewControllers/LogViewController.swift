@@ -67,8 +67,8 @@ class LogViewController: UITableViewController {
         }
         
         let equation = datasource[indexPath.row]
-        let userInfo: [AnyHashable: Any] = ["PasteKey" : equation ]
-        NotificationCenter.default.post(name: NSNotification.Name("iOSBFRee.com.Calc.LogViewController.pasteMathEquation"), object: nil, userInfo: userInfo)
+        let userInfo: [AnyHashable: Any] = [LogViewController.keys.pasteNumberKey : equation ]
+        NotificationCenter.default.post(name: NSNotification.Name(LogViewController.keys.pasteEquationNotification), object: nil, userInfo: userInfo)
         
         tableView.isUserInteractionEnabled = false
         cell.displayTick()
