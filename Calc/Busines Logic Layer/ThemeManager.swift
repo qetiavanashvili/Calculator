@@ -87,7 +87,9 @@ class ThemeManager {
         }
         
         // set the theme
-        let theme = themes[nextThemeIndex]
+        guard let theme = themes[safe: nextThemeIndex] else {
+            return
+        }
         updateSystemWithTheme(theme)
     }
     
