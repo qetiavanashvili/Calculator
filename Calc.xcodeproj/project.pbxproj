@@ -21,6 +21,15 @@
 		DA33051C295DA15D000FBB0D /* CalculatorEngineDecimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA33051B295DA15D000FBB0D /* CalculatorEngineDecimalTests.swift */; };
 		DA33051F295DBD9F000FBB0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA33051E295DBD9F000FBB0D /* Constants.swift */; };
 		DA330521295E15B7000FBB0D /* Array+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA330520295E15B7000FBB0D /* Array+SafeAccess.swift */; };
+		DA330523295F0B88000FBB0D /* 🙋🏾 Hello Everyone 👨🏼‍💼.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA330522295F0B88000FBB0D /* 🙋🏾 Hello Everyone 👨🏼‍💼.txt */; };
+		DA330525295F0B99000FBB0D /* 🤑 Our Free Courses.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA330524295F0B98000FBB0D /* 🤑 Our Free Courses.txt */; };
+		DA330527295F0BA4000FBB0D /* ⭐️ Leave A Review ⭐️.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA330526295F0BA4000FBB0D /* ⭐️ Leave A Review ⭐️.txt */; };
+		DA33052F295F0BAF000FBB0D /* 🧪 Unit Testing.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA330529295F0BAF000FBB0D /* 🧪 Unit Testing.txt */; };
+		DA330530295F0BAF000FBB0D /* 🏛 Layered Architecture.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA33052A295F0BAF000FBB0D /* 🏛 Layered Architecture.txt */; };
+		DA330531295F0BAF000FBB0D /* 💋 KISS.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA33052B295F0BAF000FBB0D /* 💋 KISS.txt */; };
+		DA330532295F0BAF000FBB0D /* 👨‍👧‍👧 Single Responsibility.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA33052C295F0BAF000FBB0D /* 👨‍👧‍👧 Single Responsibility.txt */; };
+		DA330533295F0BAF000FBB0D /* 🌵 DRY.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA33052D295F0BAF000FBB0D /* 🌵 DRY.txt */; };
+		DA330534295F0BAF000FBB0D /* 💦 WET.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA33052E295F0BAF000FBB0D /* 💦 WET.txt */; };
 		DA7CA118292FFD410033DAEB /* MathEquation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7CA117292FFD410033DAEB /* MathEquation.swift */; };
 		DA7DD50F2941B0ED00266AAF /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DD50E2941B0ED00266AAF /* ThemeManager.swift */; };
 		DA7DD5112943631A00266AAF /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DD5102943631A00266AAF /* DataStoreManager.swift */; };
@@ -78,6 +87,15 @@
 		DA33051B295DA15D000FBB0D /* CalculatorEngineDecimalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngineDecimalTests.swift; sourceTree = "<group>"; };
 		DA33051E295DBD9F000FBB0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DA330520295E15B7000FBB0D /* Array+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SafeAccess.swift"; sourceTree = "<group>"; };
+		DA330522295F0B88000FBB0D /* 🙋🏾 Hello Everyone 👨🏼‍💼.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "🙋🏾 Hello Everyone 👨🏼‍💼.txt"; sourceTree = "<group>"; };
+		DA330524295F0B98000FBB0D /* 🤑 Our Free Courses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "🤑 Our Free Courses.txt"; sourceTree = "<group>"; };
+		DA330526295F0BA4000FBB0D /* ⭐️ Leave A Review ⭐️.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "⭐️ Leave A Review ⭐️.txt"; sourceTree = "<group>"; };
+		DA330529295F0BAF000FBB0D /* 🧪 Unit Testing.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "🧪 Unit Testing.txt"; sourceTree = "<group>"; };
+		DA33052A295F0BAF000FBB0D /* 🏛 Layered Architecture.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "🏛 Layered Architecture.txt"; sourceTree = "<group>"; };
+		DA33052B295F0BAF000FBB0D /* 💋 KISS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "💋 KISS.txt"; sourceTree = "<group>"; };
+		DA33052C295F0BAF000FBB0D /* 👨‍👧‍👧 Single Responsibility.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "👨‍👧‍👧 Single Responsibility.txt"; sourceTree = "<group>"; };
+		DA33052D295F0BAF000FBB0D /* 🌵 DRY.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "🌵 DRY.txt"; sourceTree = "<group>"; };
+		DA33052E295F0BAF000FBB0D /* 💦 WET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "💦 WET.txt"; sourceTree = "<group>"; };
 		DA7CA117292FFD410033DAEB /* MathEquation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEquation.swift; sourceTree = "<group>"; };
 		DA7DD50E2941B0ED00266AAF /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		DA7DD5102943631A00266AAF /* DataStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
@@ -158,6 +176,19 @@
 			path = MathEquation;
 			sourceTree = "<group>";
 		};
+		DA330528295F0BAF000FBB0D /* ✏️ The 6 Coding Principles */ = {
+			isa = PBXGroup;
+			children = (
+				DA330529295F0BAF000FBB0D /* 🧪 Unit Testing.txt */,
+				DA33052A295F0BAF000FBB0D /* 🏛 Layered Architecture.txt */,
+				DA33052B295F0BAF000FBB0D /* 💋 KISS.txt */,
+				DA33052C295F0BAF000FBB0D /* 👨‍👧‍👧 Single Responsibility.txt */,
+				DA33052D295F0BAF000FBB0D /* 🌵 DRY.txt */,
+				DA33052E295F0BAF000FBB0D /* 💦 WET.txt */,
+			);
+			path = "✏️ The 6 Coding Principles";
+			sourceTree = "<group>";
+		};
 		DA7DD50D2940C64200266AAF /* Color Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +245,10 @@
 		DAD48CAF292423E300E9D4CD = {
 			isa = PBXGroup;
 			children = (
+				DA330522295F0B88000FBB0D /* 🙋🏾 Hello Everyone 👨🏼‍💼.txt */,
+				DA330524295F0B98000FBB0D /* 🤑 Our Free Courses.txt */,
+				DA330526295F0BA4000FBB0D /* ⭐️ Leave A Review ⭐️.txt */,
+				DA330528295F0BAF000FBB0D /* ✏️ The 6 Coding Principles */,
 				DAD48CBA292423E300E9D4CD /* Calc */,
 				DAD48CD1292423E900E9D4CD /* Unit Tests */,
 				DAD48CB9292423E300E9D4CD /* Products */,
@@ -386,8 +421,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD48CC8292423E900E9D4CD /* LaunchScreen.storyboard in Resources */,
+				DA330533295F0BAF000FBB0D /* 🌵 DRY.txt in Resources */,
+				DA330530295F0BAF000FBB0D /* 🏛 Layered Architecture.txt in Resources */,
+				DA330534295F0BAF000FBB0D /* 💦 WET.txt in Resources */,
 				DAD48CC5292423E900E9D4CD /* Assets.xcassets in Resources */,
+				DA330532295F0BAF000FBB0D /* 👨‍👧‍👧 Single Responsibility.txt in Resources */,
+				DA330527295F0BA4000FBB0D /* ⭐️ Leave A Review ⭐️.txt in Resources */,
+				DA33052F295F0BAF000FBB0D /* 🧪 Unit Testing.txt in Resources */,
 				DAD48CC3292423E300E9D4CD /* Main.storyboard in Resources */,
+				DA330531295F0BAF000FBB0D /* 💋 KISS.txt in Resources */,
+				DA330523295F0B88000FBB0D /* 🙋🏾 Hello Everyone 👨🏼‍💼.txt in Resources */,
+				DA330525295F0B99000FBB0D /* 🤑 Our Free Courses.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,9 +666,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.Calc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -650,9 +697,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.Calc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

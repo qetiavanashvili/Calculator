@@ -38,17 +38,21 @@ struct CalculatorEngine {
     // MARK: - Equation History
     private(set) var historyLog: [MathEquation] = []
     
+    // MARK: - Data Storage
+    private var dataStore = DataStoreManager(key: CalculatorEngine.keys.dataStore)
+    
+    
     // MARK: - LCD Display
     var lcdDisplayText: String {
         return inputController.lcdDisplayText
     }
     
-    
-    
+  
     // MARK: - Extra Functions
     
     mutating func clearPressed() {
         inputController = MathInputController()
+        deletePreviousSession()
      
     }
     
@@ -113,6 +117,7 @@ struct CalculatorEngine {
         inputController.execute()
         historyLog.append(inputController.mathEquation)
         printEquationToDebugConsole()
+        saveSession()
     }
     
     // MARK: - Number Input
@@ -186,6 +191,42 @@ struct CalculatorEngine {
         
         inputController = MathInputController()
         pasteInNumber(from: result)
+    }
+    
+    // MARK: - Restoring Session
+    private func deletePreviousSession() {
+        dataStore.deleteValue()
+    }
+    
+    private func saveSession() {
+        
+        guard isMathInputControllerSafeToBeSaved() else {
+            deletePreviousSession()
+            return
+        }
+        
+        let mathEquation = inputController.mathEquation
+        let encoder = JSONEncoder()
+        if let encodedEquation = try? encoder.encode(mathEquation) {
+            dataStore.set(encodedEquation)
+        }
+        
+    }
+     mutating func restoreFromLastSession() -> Bool {
+        guard let encodedEquation = dataStore.getValue() as? Data else {
+            return false
+        }
+        
+       let decoder = JSONDecoder()
+        if let previousEquation = try? decoder.decode(MathEquation.self, from: encodedEquation) {
+            inputController = MathInputController(byRestoringFrom: previousEquation)
+            return true
+        }
+         return false
+    }
+    
+    private func isMathInputControllerSafeToBeSaved() -> Bool {
+        return !inputController.containsNans
     }
     
 }

@@ -48,9 +48,17 @@ extension UIStoryboard {
     }
 }
 
-    // MARK: - ThemeManager
+// MARK: - ThemeManager
 extension ThemeManager {
     struct keys {
         static let dataStore = "IOSBFree.com.Calc.ThemeManager.ThemeIndex"
+    }
+}
+
+// MARK: - Calculator Engine
+
+extension  CalculatorEngine {
+    struct keys {
+        static let dataStore = "IOSBFree.com.Calc.CalculatorEngine.previousResult"
     }
 }

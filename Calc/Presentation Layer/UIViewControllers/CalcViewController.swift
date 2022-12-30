@@ -37,6 +37,9 @@ class CalcViewController: UIViewController {
     
     @IBOutlet weak var decimalButton: UIButton!
     
+    var needToDisplayWelcomeIntro = true
+
+    
     // MARK: Color Themes
     
     private var currentTheme: CalculatorTheme {
@@ -54,8 +57,54 @@ class CalcViewController: UIViewController {
         addThemeGestureRecogniser()
         redecorateView()
         registerForNotification()
-        // Do any additional setup after loading the view.
+       
+        prepareForWelcomeIntro()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if needToDisplayWelcomeIntro {
+            needToDisplayWelcomeIntro = false
+            displayWelcomeIntro()
+        }
+    }
+    
+    private func prepareForWelcomeIntro() {
+        lcdDisplay.alpha = 0
+    }
+    
+    private func displayWelcomeIntro() {
+        
+        let didRestoreFromLastSession = calculatorEngine.restoreFromLastSession()
+        refreshLCDDisplay()
+        
+        let timeDelay: TimeInterval = 0.25
+        if didRestoreFromLastSession {
+            slideInLCDDisplay(withDelay: timeDelay)
+            } else {
+               fadeInLCDDisplay(withDelay: timeDelay)
+          }
+        }
+        
+    private func fadeInLCDDisplay(withDelay delay: TimeInterval) {
+        UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut) { [weak self] in
+            self?.lcdDisplay.alpha = 1
+        } completion: { _ in
+            
+        }
+    }
+    
+    private func slideInLCDDisplay(withDelay delay: TimeInterval) {
+        lcdDisplay.transform = CGAffineTransform(translationX: 0, y: lcdDisplay.frame.height * 0.5)
+        UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseOut) { [weak self] in
+            self?.lcdDisplay.alpha = 1
+            self?.lcdDisplay.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+        } completion: { _ in
+            
+        }
+    }
+    
     
     // MARK: - Gestures
     

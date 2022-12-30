@@ -39,10 +39,14 @@ struct MathInputController {
         lhs  = mathInputController.result ?? Decimal(0)
         operation = mathInputController.operation
         rhs = mathInputController.rhs
-        
-    
     }
     
+    init(byRestoringFrom equation: MathEquation) {
+        lhs = equation.lhs
+        operation = equation.operation
+        rhs = equation.rhs
+        result = equation.result
+    }
     
     // MARK: - LCD Display
 
@@ -280,8 +284,12 @@ struct MathInputController {
         return false
     }
     
+    var containsNans: Bool {
+        return lhs.isNaN || (rhs?.isNaN ?? false) || (result?.isNaN ?? false)
+    }
     
        // MARK: Copy & Paste
+    
     mutating func pasteIn(_ decimal: Decimal) {
         switch operandSide {
         case .leftHandSide:
