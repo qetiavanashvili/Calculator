@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gna-pZ-aPL">
-                                <rect key="frame" x="20" y="239" width="353.66666666666674" height="595"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gna-pZ-aPL">
+                                <rect key="frame" x="19.666666666666657" y="183" width="353.66666666666674" height="595"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3g-Lg-wfO">
                                         <rect key="frame" x="0.0" y="0.0" width="353.66666666666669" height="128"/>
@@ -336,7 +336,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gna-pZ-aPL" secondAttribute="bottom" constant="40" id="GDe-xX-XuW"/>
                             <constraint firstItem="Gna-pZ-aPL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TxR-96-gsO"/>
                             <constraint firstItem="Gna-pZ-aPL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="UN9-zM-L4x"/>
-                            <constraint firstItem="Gna-pZ-aPL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="40" id="fOq-4y-6a0"/>
                         </constraints>
                         <connections>
                             <outlet property="label" destination="c9e-yt-XKt" id="Ehm-ch-l8m"/>
