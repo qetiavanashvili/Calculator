@@ -57,7 +57,7 @@ class CalcViewController: UIViewController {
         addThemeGestureRecogniser()
         redecorateView()
         registerForNotification()
-       
+
         prepareForWelcomeIntro()
     }
     
@@ -81,11 +81,11 @@ class CalcViewController: UIViewController {
         let timeDelay: TimeInterval = 0.25
         if didRestoreFromLastSession {
             slideInLCDDisplay(withDelay: timeDelay)
-            } else {
-               fadeInLCDDisplay(withDelay: timeDelay)
-          }
+        } else {
+            fadeInLCDDisplay(withDelay: timeDelay)
         }
-        
+    }
+
     private func fadeInLCDDisplay(withDelay delay: TimeInterval) {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut) { [weak self] in
             self?.lcdDisplay.alpha = 1
@@ -111,6 +111,7 @@ class CalcViewController: UIViewController {
     private func addThemeGestureRecogniser() {
         let themeGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(self.themeGestureRecogniserDidTap(_gesture:)))
         themeGestureRecogniser.numberOfTapsRequired = 2
+        themeGestureRecogniser.delegate = self
         lcdDisplay.addGestureRecognizer(themeGestureRecogniser)
     }
     
@@ -118,7 +119,7 @@ class CalcViewController: UIViewController {
         lcdDisplay.prepareForColorThemeUpdate()
         decorateViewWithNextTheme()
     }
-    
+
     
     // MARK: Decorate
     
@@ -132,7 +133,7 @@ class CalcViewController: UIViewController {
     private func redecorateView() {
         
         view.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
-        lcdDisplay.backgroundColor = .clear
+        lcdDisplay.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         lcdDisplay.label.textColor = UIColor(hex: currentTheme.displayColor)
         
         setNeedsStatusBarAppearanceUpdate()
@@ -316,7 +317,7 @@ class CalcViewController: UIViewController {
     
     @IBAction private func numberPressed(_ sender: UIButton) {
         sender.bounce()
-        
+
         deselectOperationsButtons()
         let number = sender.tag
         calculatorEngine.pinPadPressed(number)
@@ -332,7 +333,7 @@ class CalcViewController: UIViewController {
     // MARK: - Notifications
     private func registerForNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.didRecievePasteNotification(notification:)), name: Notification.Name(LCDDisplay.keys.pasteNumberNotification), object: nil)
-       
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name(LCDDisplay.keys.historyLogNotification), object: nil)
         
         
@@ -392,6 +393,12 @@ class CalcViewController: UIViewController {
         calculatorEngine.pasteInMathEquation(from: mathEquation)
         refreshLCDDisplay()
         
+    }
+}
+
+extension CalcViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        touch.view is LCDDisplay
     }
 }
 
